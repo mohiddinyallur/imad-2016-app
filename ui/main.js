@@ -36,6 +36,7 @@ class Block
 		if @y>h
 			@y = -10
 			@x = Math.random()*w
+}
 
 init = ()->
 	block_number = (w*h) / Math.pow(block_density, 2)
