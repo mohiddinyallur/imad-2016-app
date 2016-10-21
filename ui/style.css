@@ -1,4 +1,17 @@
 body {
+    @import "compass/css3";
+$w: 100vw;
+$h: 100vh;
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background: black;
+	overflow: hidden;
+}
     font-family: sans-serif;
     background-image:url("https://images4.alphacoders.com/178/17808.jpg");
     margin-top: 75px;
