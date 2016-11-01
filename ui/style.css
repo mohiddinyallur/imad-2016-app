@@ -45,10 +45,12 @@ nav #nav-left {
   font-family: "Pacifico";
 }
 
+}
+
 nav #green-leaf {
-  width: 2em;
+  width: 0.7em;
   float: left;
-  margin-top: 6px;
+  margin-top: 04px;
 }
 
 nav #nav-title {
