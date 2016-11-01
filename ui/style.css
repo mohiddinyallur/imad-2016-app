@@ -11,7 +11,7 @@ body {
 }
 
 #intro-content {
-  width: 100%;
+  width: 80%;
   height: 104vh;
   display: flex;
   align-items: center;
@@ -41,7 +41,7 @@ body {
 /* Left side of nav */
 nav #nav-left {
   order: 1;
-  margin-left: 10px;
+  margin-left: 08px;
   font-family: "Pacifico";
 }
 
