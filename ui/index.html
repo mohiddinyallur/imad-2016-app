@@ -47,3 +47,63 @@
 
 	</body>
 </html>	
+<!doctype html>
+<html>
+	<head>
+		<title>Login | ReplicaDB</title>
+		<link href="{{url_for('static',filename='Content/bootstrap.min.css')}}" rel="stylesheet" />
+		<script src="{{url_for('static',filename='Scripts/jquery.min.js')}}"></script>
+    	<script src="{{url_for('static',filename='Scripts/bootstrap.min.js')}}"></script>
+    	<link rel="shortcut icon" href="{{url_for('static',filename='icon.png')}}" />
+	</head>
+	<style type="text/css">
+		
+		.jumbotron{
+			background-color: transparent;
+			padding: 0;
+		}
+
+		.jumbotron h1{
+			font-family: garamond;
+		}
+
+	</style>
+	<body> 
+		<div class="jumbotron text-center">
+			<h2>Booking stage-II</h2>
+		</div>
+		<div class="row" style="margin: 2em 2em">
+			<div class="col-md-6 col-md-offset-3">
+				<form action="" method="POST">
+				 <p><input class="form-control" placeholder = "TripId" type="text" name="tripid" value="{{request.form.tripid}}" required /></p>
+				 <p><input class="form-control" type="number" placeholder="Number of seats" min="1" max="5" name="count" value="{{request.form.count}}" required/></p>
+				 <p><select class="form-control" name="class">
+										<option value="{{''}}" selected>--Choose class of travel--</option>
+										<option value="{{'f'}}">First Class</option>
+										<option value="{{'b'}}">Business Class</option>
+										<option value="{{'e'}}">Economy Class</option>
+										
+				</select></p>
+				 <p><input class="form-control" type="text" placeholder="Bank Account Number" name="acno" value="{{request.form.acno}}" required/></p>
+				 <p><input class="form-control" type="password" placeholder="Bank Account Password" name="acnop" value="{{request.form.acnop}}" required/></p>
+				 <input class = "btn btn-primary" type="submit" name="submit" value="Proceed" required/>
+				 
+			 </form>
+			 <br />
+			 {%with messages = get_flashed_messages()%}
+				 		{%if messages%}
+				 		<div class="alert alert-danger alert-dismissable"> 
+				 			<button type="button" class="btn btn-primary close" data-dismiss="alert"><span class="glyphicon glyphicon-remove"></span></button>
+				 			{%for message in messages%}
+				 				<p>{{message}}</p>
+				 			{%endfor%}
+				 		</div>
+				 		{%endif%}
+				 	{%endwith%}
+			</div>
+		</div>
+
+		 
+
+	</body>
+</html>	
