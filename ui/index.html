@@ -1,24 +1,49 @@
-<section id="section-intro">
-    <title>
-        
-            Test website
-    </title>
-    <p>
-        <head><b><i><ul><u>Welcome to a blog website created by Mohiddin Yallur</u></ul></i></b></head>
-    </p>
-  <nav>
-    <header id="nav-left">
-      <a href="#section-intro"><img id="green-leaf" src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1440,w_720,f_auto,q_90/v1/138836/IMAD-Mascot_rninuq.png" /></a>
-      <a id="nav-title" href="https://www.imad.tech" >Hasura</a>
-    </header>
-    <div id="nav-right">
-      <a class="nav-right-link" id="nav-board" href="#section-board">The Board</a>
-      <a class="nav-right-link" id="nav-code" href="#section-code">Code Editor</a>
-      <a class="nav-right-link" id="nav-draw" href="#section-draw">Drawing Canvas</a>
-      <a class="nav-right-link" id="nav-write" href="#section-write">Writing Area</a>
-    </div>
-  </nav>
-  <div id="intro-content">
-    <a href="http://www.leafie.io/home"><img id="intro-img" src="https://s16.postimg.org/c5efhybn9/mac_code.png" /></a>
-  </div>
-</section>
+<!doctype html>
+<html>
+	<head>
+		<title>Login | ReplicaDB</title>
+		<link href="{{url_for('static',filename='Content/bootstrap.min.css')}}" rel="stylesheet" />
+		<script src="{{url_for('static',filename='Scripts/jquery.min.js')}}"></script>
+    	<script src="{{url_for('static',filename='Scripts/bootstrap.min.js')}}"></script>
+    	<link rel="shortcut icon" href="{{url_for('static',filename='icon.png')}}" />
+	</head>
+	<style type="text/css">
+		
+		.jumbotron{
+			background-color: transparent;
+			padding: 0;
+		}
+		.jumbotron h1{
+			font-family: garamond;
+		}
+	</style>
+	<body> 
+		<div class="jumbotron text-center">
+			<h2>Login</h2>
+		</div>
+		<div class="row" style="margin: 2em 2em">
+			<div class="col-md-6 col-md-offset-3">
+				<form action="" method="POST">
+				 <p><input class="form-control" placeholder = "Email" type="email" name="email" value="{{request.form.email}}" /></p>
+				 <p><input class="form-control" type="password" placeholder="password" name="password" value="{{request.form.password}}" /></p>
+				 <input class = "btn btn-primary" type="submit" name="submit" value="Login" />
+				 <a href="{{url_for('signup')}}"><button type = "button" class="btn btn-success">Signup</button></a>
+			 </form>
+			 <br />
+			 {%with messages = get_flashed_messages()%}
+				 		{%if messages%}
+				 		<div class="alert alert-danger alert-dismissable"> 
+				 			<button type="button" class="btn btn-primary close" data-dismiss="alert"><span class="glyphicon glyphicon-remove"></span></button>
+				 			{%for message in messages%}
+				 				<p>{{message}}</p>
+				 			{%endfor%}
+				 		</div>
+				 		{%endif%}
+				 	{%endwith%}
+			</div>
+		</div>
+
+		 
+
+	</body>
+</html>	
