@@ -1,0 +1,185 @@
+﻿body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+#banner{
+    height:80vh;
+    width:100%;
+    background-image:url('./index/banner.jpg');
+    background-attachment:fixed;
+    background-position:center;
+    background-size:cover;
+    background-repeat:repeat-x;
+}
+
+#banner .container-fluid ul{
+    color:white;
+    padding:2em 2em;
+    box-sizing:border-box;
+    font-family:'Century Gothic';
+    list-style-type:none;
+}
+
+#banner .container-fluid ul li{
+    float:right;
+    margin-right:2em;
+}
+
+#banner .container-fluid ul li a{
+    color:white;
+}
+
+#banner .container-fluid ul li a:hover{
+    text-decoration-line:underline;
+}   
+
+
+#banner .container-fluid .jumbotron{
+    background-color:transparent;
+    color:white;  
+    position:relative;
+    height:42.5vh;
+    margin-top:15vh;
+}
+
+@keyframes displayh1{
+    0%{transform:scale(0);}
+    50%{transform:scale(2);}
+    100%{transform:scale(1);}
+}
+
+@keyframes displayh3{
+    0%{transform:translateX(-50em);display:none;}
+    100%{transform:translateX(0);display:block;}
+}
+
+#banner .container-fluid .jumbotron h1{
+    font-family:Monoton;
+    font-size:7em;
+    animation:displayh1 2s;
+    transition:all ease-in-out 3s;
+}
+
+#banner .container-fluid .jumbotron h3{
+    font-family:'Segoe Script';
+    animation:displayh3 1s;
+    transition:all ease-in-out;
+}
+
+#logos #about{
+    margin:3em 0;
+    text-align:justify;
+}
+
+#logos #about .jumbotron{
+    background-color:transparent;
+    margin-bottom:3em;
+    padding:0;
+    font-family:'comfortaa',cursive;
+}
+
+#logos .container{
+    background-color:white;
+    margin-top:-5em;
+    padding-bottom:5em;
+    border-radius:5px;
+}
+
+#logos .logo{
+    float:left;
+    padding:2em 1em;
+    box-sizing:border-box;
+}
+
+#logos .logo img{
+    height:100px;
+    width:100px;;
+}
+
+
+#login{
+    padding:2em 2em;
+    box-sizing:border-box;
+}
+
+#login #signupForm{
+    display:none;
+}
+
+#login #loginForm{
+    display:none;
+}  
+ 
+#contact{
+    background-color:#333;
+    color:white;
+    padding-bottom:2em;
+}
+
+#contact h3{
+    font-family:'Century Gothic';
+}
+
+#contact a{
+    color:white;
+}
+
+#contact .jumbotron{
+    background-color: transparent;;
+}
+
+#contact #social-network ul{
+    list-style-type:none;
+   
+}
+
+#contact #social-network ul li{
+    margin:0 0.5em;
+    display:inline;
+    float:left;
+}
+
+#contact #social-network img{
+    height:50px;
+    width:50px;
+    padding:10px;
+    
+}
+
+
+@media screen and (max-width:1200px){
+
+
+}
+
+@media screen and (max-width:960px){
+
+    #banner{
+        height:100vh;
+        overflow-x:hidden;
+    }
+
+    #banner .container-fluid .jumbotron h1{
+        font-size:4.7em;
+    }
+}
+
+@media screen and (max-width:760px){ 
+
+     #logos .logo img{
+        height:40px;
+        width:40px;;
+    }
+}
+
+@media screen and (max-width:480px){
+        
+    
+}
+
+@media screen and (max-width:340px){
+
+
+}
