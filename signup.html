@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Signup | ReplicaDB</title>
+		<link href="{{url_for('static',filename='Content/bootstrap.min.css')}}" rel="stylesheet" />
+		<script src="{{url_for('static',filename='Scripts/jquery.min.js')}}"></script>
+    	<script src="{{url_for('static',filename='Scripts/bootstrap.min.js')}}"></script>
+    	<link rel="shortcut icon" href="{{url_for('static',filename='icon.png')}}" />
+	</head>
+	<body> 
+		<div class="row" style="margin: 2em 2em">
+			<div class="col-md-6 col-md-offset-3">
+				<form action="" method="POST">
+				<p><input class="form-control" placeholder = "Name" type="text" name="name" value="{{request.form.name}}" /></p>
+				 <p><input class="form-control" placeholder = "Email" type="email" name="email" value="{{request.form.email}}" /></p>
+				 <p><input class="form-control" type="password" placeholder="password" name="password" value="{{request.form.password}}" /></p>
+				 <input class = "btn btn-primary" type="submit" name="submit" value="Signup" />
+			 </form>
+			 
+			 	{%with messages = get_flashed_messages()%}
+			 		{%if messages%}
+			 		<div class="alert alert-danger alert-dismissable"> 
+			 			<button type="button" class="btn btn-primary close" data-dismiss="alert"><span class="glyphicon glyphicon-remove"></span></button>
+			 			{%for message in messages%}
+			 				<p>{{message}}</p>
+			 			{%endfor%}
+			 		</div>
+			 		{%endif%}
+			 	{%endwith%}
+			 
+			</div>
+		</div>
+
+		 
+
+	</body>
+</html>	
+

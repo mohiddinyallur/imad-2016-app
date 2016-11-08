@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Replica DB</title>
+	<meta charset="utf-8" />    
+    <link href="{{url_for('static',filename='Content/bootstrap.min.css')}}" rel="stylesheet" />
+    <script src="{{url_for('static',filename='Scripts/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='Scripts/bootstrap.min.js')}}"></script>
+    
+    <script src="{{url_for('static',filename='Scripts/SmoothScroll.min.js')}}"></script>   
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Monoton" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,target-densitydpi=device-dpi" />
+    <link rel="shortcut icon" href="{{url_for('static',filename='icon.png')}}" />
+    <script>
+        $(document).ready(function () {
+            $('a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+
+                var target = this.hash,
+                $target = $(target);
+
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top
+                }, 1200, 'swing', function () {
+                    window.location.hash = target;
+
+                });
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+    <!--Banner division begins. This portion of the web page is for descibing the name of the wesbite along with logo and related material-->
+
+    <div id="banner">
+        <div class="container-fluid">
+            <div class="row">
+                <ul>
+                    <li>
+                        <p onclick="displayForm(1);"><a href="{{url_for('Login')}}">Login</a></p>
+                    </li>
+                    <li>
+                        <p onclick="displayForm(2);"><a href="{{url_for('signup')}}">Sign up</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="jumbotron text-center">
+                <h1>Replica-DB</h1>
+                <h3>Travel at ease !</h3>
+            </div>
+        </div>
+    </div>
+
+    <!--Banner ends-->
+    <!--Logos-->
+    <div id="logos">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2 logo">
+                    <center><img src="{{url_for('static',filename='index/logos/1.png')}}" id="logo1" class="img-responsive" /></center>
+                </div>
+                <div class="col-xs-2 logo">
+                    <center><img src="{{url_for('static',filename='index/logos/2.png')}}" id="logo2" class="img-responsive" /></center>
+                </div>
+                <div class="col-xs-2 logo">
+                    <center><img src="{{url_for('static',filename='index/logos/3.png')}}" id="logo3" class="img-responsive" /></center>
+                </div>
+                <div class="col-xs-2 logo">
+                    <center><img src="{{url_for('static',filename='index/logos/4.png')}}" id="logo4" id="logo1" class="img-responsive" /></center>
+                </div>
+                <div class="col-xs-2 logo">
+                    <center><img src="{{url_for('static',filename='index/logos/5.png')}}" id="logo5" class="img-responsive" /></center>
+                </div>
+                <div class="col-xs-2 logo">
+                    <center><img src="{{url_for('static',filename='index/logos/6.png')}}" id="logo6" class="img-responsive" /></center>
+                </div>
+            </div>
+
+            <div class="row" id="about">
+                <div class="jumbotron text-center">
+                    <h3>About Replica-DB</h3><hr />
+                </div>
+                <div class="col-md-8 col-md-offset-2">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <!--Logos end-->
+    
+    <div id="contact">
+        <div class="container-fluid" style="margin-bottom:1em;">
+            <div class="jumbotron text-center">
+                <h2>CONTACT</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-1 col-xs-10 col-xs-offset-1" id="message">
+                    <h3>A small message : </h3><hr />
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="col-md-2 col-md-offset-0 col-xs-10 col-xs-offset-1">
+                    <h3>My Interests : </h3><hr />
+                    <ul>
+                        <li>Portraits</li>
+                        <li>Landscapes</li>
+                        <li>Abstract drawing</li>
+                        <li>Memory Drawing</li>
+                        <li>Animals</li>
+                        <li>and many more...</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-md-offset-0 col-xs-10 col-xs-offset-1" id="social-network">
+                    <h3>Follow me @ : </h3><hr />
+                    <ul>
+                        <li><a href="#"><img src="{{url_for('static',filename='icon-fb.png')}}" class="img-responsive" style="background-color:skyblue" /></a></li>
+                        <li><a href="#"><img src=".{{url_for('static',filename='icon-gp.png')}}" class="img-responsive" style="background-color:red" /></a></li>
+                        <li><a href="#"><img src="{{url_for('static',filename='icon-tw.png')}}" class="img-responsive" style="background-color:blue" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
