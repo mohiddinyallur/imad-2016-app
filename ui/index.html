@@ -107,3 +107,176 @@
 
 	</body>
 </html>	
+<!doctype html>
+<html>
+	<head>
+		<title>Booking | ReplicaDB</title>
+		<link href="{{url_for('static',filename='Content/bootstrap.min.css')}}" rel="stylesheet" />
+		<script src="{{url_for('static',filename='Scripts/jquery.min.js')}}"></script>
+    	<script src="{{url_for('static',filename='Scripts/bootstrap.min.js')}}"></script>
+    	<link rel="shortcut icon" href="{{url_for('static',filename='icon.png')}}" />
+	</head>
+
+	<style type="text/css">
+		
+		body{
+			overflow-x: hidden;
+		}
+
+		.container .jumbotron{
+			background-color: transparent;
+		}
+
+	</style>
+	
+	<body> 
+		
+		<div class="container">
+			<div class="jumbotron text-center">
+				<h2>Book here!</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<form action="" method="POST">
+						<div class="row">
+							<div class="col-md-5 col-md-offset-1">
+								<div class="form-group">
+									<label>Source :</label>
+									<select class="form-control" name="source">
+										<option value="{{''}}" selected>--Select Source--</option>
+										<option value="{{'Bengaluru'}}">Bengaluru</option>
+										<option value="{{'Dehli'}}">Dehli</option>
+										<option value="{{'Mumbai'}}">Mumbai</option>
+										<option value="{{'Ahmedabad'}}">Ahmedabad</option>
+										<option value="{{'Kolkatta'}}">Kolkatta</option>
+										<option value="{{'Hyderabad'}}">Hyderabad</option>
+										<option value="{{'Bhopal'}}">Bhopal</option>
+										<option value="{{'Panjim'}}">Panjim</option>
+										<option value="{{'Thiruvananthapuram'}}">Thiruvananthapuram</option>
+										<option value="{{'Chennai'}}">Chennai</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-5 ">
+								<div class="form-group">
+									<label>Destination :</label>
+									<select class="form-control" name="destination">
+										<option value="{{''}}" selected>--Select Destination--</option>
+										<option value="{{'Bengaluru'}}">Bengaluru</option>
+										<option value="{{'Dehli'}}">Dehli</option>
+										<option value="{{'Mumbai'}}">Mumbai</option>
+										<option value="{{'Ahmedabad'}}">Ahmedabad</option>
+										<option value="{{'Kolkatta'}}">Kolkatta</option>
+										<option value="{{'Hyderabad'}}">Hyderabad</option>
+										<option value="{{'Bhopal'}}">Bhopal</option>
+										<option value="{{'Panjim'}}">Panjim</option>
+										<option value="{{'Thiruvananthapuram'}}">Thiruvananthapuram</option>
+										<option value="{{'Chennai'}}">Chennai</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-5 col-md-offset-1">
+								<div class="form-group">
+									<label>Travel Date:</label>
+									<input class="form-control" type="date" name="date" value="{{request.form.date}}" />
+								</div>
+							</div>
+							
+						</div>
+						<center><input type="submit" name="submit" value="Check" class="btn btn-primary" /></center>
+					</form>
+				</div>
+			</div>
+		</div>	
+
+		<br />
+		<center>{{title[1]}}</center></body><br />
+		<div class="row">
+			<div class="col-md-1 col-md-offset-1">
+				<center><p>{{table[0]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[1]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[2]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[3]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[4]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[5]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[6]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[7]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[8]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[9]}}</p></center>
+			</div>
+		</div>
+
+		{%with messages = get_flashed_messages()%}
+	 		{%if messages%}
+		 		<div class="container-fluid"> 
+		 			<!--button type="button" class="btn btn-primary close" data-dismiss="alert"><span class="glyphicon glyphicon-remove"></span></button>-->
+		 			{%for message in messages%}
+		 				<div class="row" style="margin-top:1.5em; margin-bottom: 1.5em; ">
+							<div class="col-md-1 col-md-offset-1">
+								<center><p>{{message[0]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[1]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[2]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[3]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[4]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[5]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[6]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[7]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[8]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[9]}}</p></center>
+							</div>
+						</div>
+		 			{%endfor%}
+		 		</div>
+	 		{%endif%}
+		{%endwith%}
+
+
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<p>Please remember the trip ID which you wish to book before we proceed!</p>
+				<a href = {{url_for('schedule')}}><button type="button" class="btn btn-primary">Book</button></a>
+			</div>
+		</div>
+		
+
+	</body>
+</html>	
+
