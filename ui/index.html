@@ -322,3 +322,98 @@
 	</body>
 </html>	
 
+<!doctype html>
+<html>
+	<head>
+		<title>Ticket | ReplicaDB</title>
+		<link href="{{url_for('static',filename='Content/bootstrap.min.css')}}" rel="stylesheet" />
+		<script src="{{url_for('static',filename='Scripts/jquery.min.js')}}"></script>
+    	<script src="{{url_for('static',filename='Scripts/bootstrap.min.js')}}"></script>
+    	<link rel="shortcut icon" href="{{url_for('static',filename='icon.png')}}" />
+	</head>
+	<style type="text/css">
+		
+		.jumbotron{
+			background-color: transparent;
+			padding: 0;
+		}
+
+		.jumbotron h1{
+			font-family: garamond;
+		}
+
+	</style>
+	<body> 
+
+
+			 {%with messages = get_flashed_messages()%}
+				 		{%if messages%}
+				 		<div class="container text-center"> 
+				 			
+				 			{%for message in messages%}
+				 				
+				 				<div class="jumbotron">
+				 					<h1>{{message[0]}}</h1>
+				 				</div>
+
+				 				<div class="row">
+				 					<div class="col-md-1 col-md-offset-1">
+				 						<p>Ticket Id : {{message[1]}}</p>
+				 					</div>
+				 					<div class="col-md-1">
+				 						<p>Name : {{message[2]}}</p>
+				 					</div>
+				 					<div class="col-md-1">
+				 						<p>Trip Id : {{message[3]}}</p>
+				 					</div>
+				 					<div class="col-md-1">
+				 						<p>Source : {{message[4]}}</p>
+				 					</div>
+				 					<div class="col-md-1">
+				 						<p>Destination : {{message[5]}}</p>
+				 					</div>
+				 					<div class="col-md-2">
+				 						<p>Departure : {{message[6]}}</p>
+				 					</div>
+				 					<div class="col-md-2">
+				 						<p>Arrival : {{message[7]}}</p>
+				 					</div>
+				 					<div class="col-md-1">
+				 						<p>Seats : {{message[8]}}</p>
+				 					</div>
+				 					<div class="col-md-1">
+				 						<p>Amount : {{message[9]}}</p>
+				 					</div>
+				 				</div>
+				 				
+				 			{%endfor%}
+				 		</div>
+				 		{%endif%}
+				 	{%endwith%}
+			
+
+				 	<div class="container">
+				 		<h2>Travel Itinerary has been mailed to you. Please carry valid Id cards while you travel.</h2>
+				 		<div class="jumbotron text-center">
+				 			<h1>Bon Voyage!</h1>
+				 			<h3>Thanks for booking with replicaDB</h3>
+				 		</div>
+				 	</div>
+
+		 <div class="row">
+		 	<div class="col-md-1 col-md-offset-4">
+		 		<center><a href = "{{url_for('logout')}}"><button type="button" class="btn btn-primary">Logout</button></a></center>
+		 	</div>
+
+			<div class="col-md-2">
+		 		<center><a href = "{{url_for('booking')}}"><button type="button" class="btn btn-primary">Book Another</button></a></center>
+		 	</div>
+
+		 	<div class="col-md-1">
+		 		<center><a href = "{{url_for('ticketHistory')}}"><button type="button" class="btn btn-primary">Ticket History</button></a></center>
+		 	</div>		 	
+		 </div>
+
+
+	</body>
+</html>	
