@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Ticket History | ReplicaDB</title>
+		<link href="{{url_for('static',filename='Content/bootstrap.min.css')}}" rel="stylesheet" />
+		<script src="{{url_for('static',filename='Scripts/jquery.min.js')}}"></script>
+    	<script src="{{url_for('static',filename='Scripts/bootstrap.min.js')}}"></script>
+    	<link rel="shortcut icon" href="{{url_for('static',filename='icon.png')}}" />
+	</head>
+	<style type="text/css">
+			
+			body{
+				overflow-x: hidden;
+			}
+
+			.container .jumbotron{
+				background-color: transparent;
+				font-family: waree;
+			}
+			header{
+				padding: 1em 1em;
+				box-sizing: border-box;
+			}
+
+	</style>
+	<body>
+		<header>
+			<div class="dropdown">
+		 		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Other actions <span class="caret"></span></button>
+			  		<ul class="dropdown-menu">
+				    	<li><a href="{{url_for('booking')}}">Booking</a></li>
+				   		<li><a href="{{url_for('ticketHistory')}}">Ticket History</a></li>
+				   		<li><a href="{{url_for('accountSettings')}}">Account settings</a></li>
+				    	<li><a href="{{url_for('logout')}}">Logout</a></li>
+			  		</ul>
+			</div>
+		</header>
+
+		
+
+		<div class= "container">
+			<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				
+				<form action="" method="POST">
+					<div class="form-group">
+					<label>Enter the Ticket Id to be cancelled :</label>
+					<p>	<input class="form-control " name="ticketId" value="{{request.form.ticketId}}" type="text" placeholder="Enter the ticket id you wish to cancel" /></p>
+
+						<p><input type="submit" class="btn btn-primary" value="Cancel ticket" /></p>
+					</div>
+				</form>
+
+			</div>
+			</div>
+		</div>
+		<center>{{var}}</center>
+
+		<div class="container">
+			<div class="jumbotron text-center">
+				<h2>Your booked ticket history is as follows</h2>
+			</div>
+			
+		<div class="row">
+			<div class="col-md-1">
+				<center><p>{{table[0]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[1]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[2]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[3]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[4]}}</p></center>
+			</div>
+			<div class="col-md-2">
+				<center><p>{{table[5]}}</p></center>
+			</div>
+			<div class="col-md-2">
+				<center><p>{{table[6]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[7]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[8]}}</p></center>
+			</div>
+			<div class="col-md-1">
+				<center><p>{{table[9]}}</p></center>
+			</div>
+		</div>
+
+		{%with messages = get_flashed_messages()%}
+	 		{%if messages%}
+		 		<div class="container-fluid"> 
+		 			<!--button type="button" class="btn btn-primary close" data-dismiss="alert"><span class="glyphicon glyphicon-remove"></span></button>-->
+		 			{%for message in messages%}
+		 				<div class="row" style="margin-top:1.5em; margin-bottom: 1.5em; ">
+							<div class="col-md-1">
+								<center><p>{{message[0]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[1]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[2]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[3]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[4]}}</p></center>
+							</div>
+							<div class="col-md-2">
+								<center><p>{{message[5]}}</p></center>
+							</div>
+							<div class="col-md-2">
+								<center><p>{{message[6]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[7]}}</p></center>
+							</div>
+							<div class="col-md-1">
+								<center><p>{{message[8]}}</p></center>
+							</div>
+							
+						</div>
+		 			{%endfor%}
+		 		</div>
+	 		{%endif%}
+		{%endwith%}
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Ticket History | ReplicaDB</title>
+		<link href="{{url_for('static',filename='Content/bootstrap.min.css')}}" rel="stylesheet" />
+		<script src="{{url_for('static',filename='Scripts/jquery.min.js')}}"></script>
+    	<script src="{{url_for('static',filename='Scripts/bootstrap.min.js')}}"></script>
+    	<link rel="shortcut icon" href="{{url_for('static',filename='icon.png')}}" />
+	</head>
+	<style type="text/css">
+			
+			body{
+				overflow-x: hidden;
+			}
+
+			.container .jumbotron{
+				background-color: transparent;
+				font-family: waree;
+			}
+			header{
+				padding: 1em 1em;
+				box-sizing: border-box;
+			}
+
+	</style>
+	<body>
+		<header>
+
+			<div class="dropdown">
+		 		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Other actions <span class="caret"></span></button>
+			  		<ul class="dropdown-menu">
+				    	<li><a href="{{url_for('booking')}}">Booking</a></li>
+				   		<li><a href="{{url_for('ticketHistory')}}">Ticket History</a></li>
+				   		<li><a href="{{url_for('cancelTicket')}}">Cancel Tickets</a></li>
+				    	<li><a href="{{url_for('logout')}}">Logout</a></li>
+			  		</ul>
+			</div>
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<form action="" method="POST">
+						<div class="form-group">
+							<label>Enter the new email-id : </label>
+							<input type="text" name="email" class="form-control" value="{{request.form.email}}" placeholder="New email or else re-enter the old one" />
+						</div>
+						<div class="form-group">
+							<label>Enter the new password : </label>
+							<input type="password" name="password" class="form-control" value="{{request.form.password}}" placeholder="New password" />
+						</div>
+						<div class="form-group">
+							<input type="submit" name="submit" value="Update" class="btn btn-primary" />
+						</div>
+					</form>
+				</div>	
+			</div>
+		</div>
+
+		{%with messages = get_flashed_messages()%}
+			 		{%if messages%}
+			 		<div class="alert alert-danger alert-dismissable"> 
+			 			<button type="button" class="btn btn-primary close" data-dismiss="alert"><span class="glyphicon glyphicon-remove"></span></button>
+			 			{%for message in messages%}
+			 				<p>{{message}}</p>
+			 			{%endfor%}
+			 		</div>
+			 		{%endif%}
+		{%endwith%}
+				
+		
+ 	</body>
+</html> 	
