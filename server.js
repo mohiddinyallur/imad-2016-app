@@ -86,13 +86,13 @@ app.get('/hash/:input', function(req, res) {
 
 app.post('/create-user', function (req, res) {
    // username, password
-   // {"username": "tanmai", "password": "password"}
+   // {"username": "mohiddinyallur", "password": "password"}
    // JSON
    var username = req.body.username;
    var password = req.body.password;
    var salt = crypto.randomBytes(128).toString('hex');
    var dbString = hash(password, salt);
-   pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
+   pool.query('INSERT INTO "User_Login" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
@@ -105,7 +105,7 @@ app.post('/login', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
    
-   pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
+   pool.query('SELECT * FROM "User_Login" WHERE username = $1', [username], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
@@ -137,7 +137,7 @@ app.post('/login', function (req, res) {
 app.get('/check-login', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
        // Load the user object
-       pool.query('SELECT * FROM "user" WHERE id = $1', [req.session.auth.userId], function (err, result) {
+       pool.query('SELECT * FROM "User_Login" WHERE id = $1', [req.session.auth.userId], function (err, result) {
            if (err) {
               res.status(500).send(err.toString());
            } else {
@@ -159,7 +159,7 @@ var pool = new Pool(config);
 app.get('/get-articles', function (req, res) {
    // make a select request
    // return a response with the results
-   pool.query('SELECT * FROM article ORDER BY date DESC', function (err, result) {
+   pool.query('SELECT * FROM User_Articles ORDER BY date DESC', function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
@@ -171,7 +171,7 @@ app.get('/get-articles', function (req, res) {
 app.get('/get-comments/:articleName', function (req, res) {
    // make a select request
    // return a response with the results
-   pool.query('SELECT comment.*, "user".username FROM article, comment, "user" WHERE article.title = $1 AND article.id = comment.article_id AND comment.user_id = "user".id ORDER BY comment.timestamp DESC', [req.params.articleName], function (err, result) {
+   pool.query('SELECT comment.*, "user".username FROM Articles, comment, "user" WHERE article.title = $1 AND article.id = comment.article_id AND comment.user_id = "user".id ORDER BY comment.timestamp DESC', [req.params.articleName], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
@@ -184,7 +184,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
    // Check if the user is logged in
     if (req.session && req.session.auth && req.session.auth.userId) {
         // First check if the article exists and get the article-id
-        pool.query('SELECT * from article where title = $1', [req.params.articleName], function (err, result) {
+        pool.query('SELECT * from Articles where title = $1', [req.params.articleName], function (err, result) {
             if (err) {
                 res.status(500).send(err.toString());
             } else {
