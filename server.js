@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var config = {
-    user: 'mohiddinmyallur',
-    database: 'mohiddinmyallur',
+    user: 'mohiddimyallur',
+    database: 'mohiddinyallur',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
