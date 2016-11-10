@@ -172,7 +172,7 @@ app.get('/get-articles', function (req, res) {
 app.get('/get-comments/:articleName', function (req, res) {
    // make a select request
    // return a response with the results
-   pool.query('SELECT comment.*, "User_Login".username FROM article, comment, "User_Login" WHERE article.title = $1 AND article.id = comment.article_id AND comment.user_id = "User_Login".id ORDER BY comment.timestamp DESC', [req.params.articleName], function (err, result) {
+   pool.query('SELECT comment.*, "user".username FROM article, comment, "User_Login" WHERE article.title = $1 AND article.id = comment.article_id AND comment.user_id = "User_Login".id ORDER BY comment.timestamp DESC', [req.params.articleName], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
