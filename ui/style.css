@@ -7,6 +7,7 @@ body {
 
 .center {
     text-align: center;
+    
 }
 
 .text-big {
@@ -31,6 +32,7 @@ body {
 }
 
 .comment {
+    background-image:url("http://www.hbc333.com/data/out/34/47302153-blurred-wallpaper.jpg");
     background-color:'light green';
     margin-left: 10px;
     padding-bottom: 10px;
