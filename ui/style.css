@@ -23,6 +23,11 @@ body {
 }
 
 .container {
+    background-image:url("http://bsnscb.com/data/out/23/38689834-blur-wallpapers.jpg");
+     background-repeat:no-repeat;
+            background-size:2000px;
+            background-position:0% 0%;
+            background-origin:content-box;
     max-width: 800px;
     margin: 0 auto;
     color: #1e1b34;
