@@ -2,7 +2,7 @@
 function loadLoginForm () {
     var loginHtml = `
         <h3>Please login or Register to acess your account and much more!!</h3>
-        <input type="text" id="username" placeholder="username" />
+        <input type="text" id="username" placeholder="username/Email" />
         <input type="password" id="password" placeholder="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
