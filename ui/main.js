@@ -28,6 +28,7 @@ function loadLoginForm () {
                   alert('oops!!! Something went wrong on the server');
                   submit.value = 'Login';
               } else {
+                  alert('Invalid Username or Password, please login with your registerd credentials')
                   submit.value = 'Login';
               }
               loadLogin();
@@ -57,7 +58,7 @@ function loadLoginForm () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status ===200) {
-                  alert('User created successfully , now you are allowed to login');
+                  alert('User created successfully , please login for further steps');
                   register.value = 'Registered!';
               } else {
                   alert('could not register the user');
