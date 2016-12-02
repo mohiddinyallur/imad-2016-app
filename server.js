@@ -106,14 +106,13 @@ app.post('/create_user', function (req, res) {
     }
 });
 
-app.post('/login', function (req, res) {
-   var username = req.body.username;
-   var password = req.body.password;
-    if(!username.trim() || !password.trim() || username.length>32 || password.length>32)
-    {
+app.post('/login',function(req,res){
+ var username=req.body.username;
+ var password=req.body.password;
+ if(!username.trim() || !password.trim() || username.length>32 || password.length>32){
       res.status(400).send('Cannot leave username or password blank.Please Enter Username/Password:(Upto 32 chars)');
  }
- else if(!/^[a-zA-Z0-9_.@]+$/.test(username)){  //If username contains other than a-z,A-Z,0-9,@._ then send error.
+ else if(!/^[a-zA-Z0-9_ .@]+$/.test(username)){  //If username contains other than a-z,A-Z,0-9,@._BLANKSPACE then send error.
     res.status(500).send("Username can't contain special characters except _.@");
 }
 else{
