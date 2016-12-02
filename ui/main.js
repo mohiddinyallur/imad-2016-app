@@ -28,7 +28,6 @@ function loadLoginForm () {
                   alert('oops!!! Something went wrong on the server');
                   submit.value = 'Login';
               } else {
-                  alert('oops!!Something went wrong on the server');
                   submit.value = 'Login';
               }
               loadLogin();
@@ -39,8 +38,6 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        console.log(username);
-        console.log(password);
         request.open('POST', '/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
@@ -61,7 +58,6 @@ function loadLoginForm () {
                   alert('User created successfully , you can login now');
                   register.value = 'Registered!';
               } else {
-                  alert('Could not register the user, ');
                   register.value = 'Register';
               }
           }
@@ -70,8 +66,6 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        console.log(username);
-        console.log(password);
         request.open('POST', '/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
