@@ -134,7 +134,7 @@ app.post('/create-user', function (req, res) {
       res.status(400).send('Cannot leave username or password blank.Please Enter Username/Password:(Upto 32 chars)')
   } 
   else if(!/^[a-zA-Z0-9_.@]+$/.test(username)){  //If username contains other than a-z,A-Z,0-9,@._ then send error.
-      res.status(500).send("Username can't contain special characters except _.@");
+      res.status(500).send("Username cant contain special characters except _.@");
   }
   else{
         var salt = crypto.randomBytes(128).toString('hex');
