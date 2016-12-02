@@ -58,6 +58,7 @@ function loadLoginForm () {
                   alert('User created successfully , you can login now');
                   register.value = 'Registered!';
               } else {
+                  alert('could not register the user');
                   register.value = 'Register';
               }
           }
