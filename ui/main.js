@@ -2,6 +2,7 @@
 function loadLoginForm () {
     var loginHtml = `
         <h3>Please login or Register to acess your account and much more!!</h3>
+        
         <input type="text" id="username" placeholder="username/Email" />
         <input type="password" id="password" placeholder="password" />
         <br/><br/>
@@ -29,7 +30,7 @@ function loadLoginForm () {
                   alert('oops!!! Something went wrong on the server');
                   submit.value = 'Login';
               } else {
-                  alert('Invalid Username or Password, please login with your registerd credentials');
+                  alert('Empty Username or Password, please login with your registerd credentials');
                   submit.value = 'Login';
               }
               loadLogin();
