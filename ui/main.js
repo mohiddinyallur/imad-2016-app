@@ -62,7 +62,7 @@ function loadLoginForm () {
                   alert('User created successfully , please login for further steps');
                   register.value = 'Registered!';
               } else {
-                  alert('could not register the user.                                                                                                                    possible errors                                                                                                           1.Empty Password/Username                                                                                           2.Username may contain special characters except "@, . , _ ,- " ');
+                  alert('could not register the user.Empty Password/Username or Username may contain special characters except "@, . , _ ,- " ');
                   register.value = 'Register';
               }
           }
