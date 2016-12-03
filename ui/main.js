@@ -25,12 +25,12 @@ function loadLoginForm () {
                   submit.value = 'Sucess!';
               } else if (request.status === 403) {
                   submit.value = 'Invalid credentials. Please try again?';
-                  alert('Invalid credentials. Please try again');
+                  alert(this.responseText);
               } else if (request.status === 500) {
-                  alert('oops!!! Something went wrong on the server');
+                  alert(this.responseText);
                   submit.value = 'Login';
               } else {
-                  alert('Empty Username or Password, please login with your registerd credentials');
+                  alert(this.responseText);
                   submit.value = 'Login';
               }
               loadLogin();
@@ -60,10 +60,10 @@ function loadLoginForm () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status ===200) {
-                  alert('User created successfully , please login for further steps');
+                  alert(this.responseText);
                   register.value = 'Registered!';
               } else {
-                  alert('could not register the user.Empty Password/Username or Username may contain special characters except "@, . , _ ,- " ');
+                  alert(this.responseText);
                   register.value = 'Register';
               }
           }
