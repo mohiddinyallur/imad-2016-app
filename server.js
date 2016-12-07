@@ -222,9 +222,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
                 }
             }
        });     
-    } else {
-        res.status(403).send('Only logged in users can comment');
-    }
+    } 
 });
 
 app.get('/articles/:articleName', function (req, res) {
