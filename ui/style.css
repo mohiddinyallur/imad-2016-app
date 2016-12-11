@@ -15,6 +15,9 @@ body {
     font-size: 300%;
 }
 
+.img-circle {
+    border-radius: 50%;
+}
 .bold {
     font-weight: bold;
 }
